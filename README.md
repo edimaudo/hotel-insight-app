@@ -2,7 +2,8 @@
 
 A streamlit app focused Hotel analytics.  The goal is to analyze data, identify opportunities and provide recommendations to hotel management to help them achieve their goals and grow their business.
 
-[Link to PowerPoint deck](https://github.com/edimaudo/hotel-insight-app/blob/main/Hotel_analytics.pptx)
+[PowerPoint deck](https://github.com/edimaudo/hotel-insight-app/blob/main/Hotel_analytics.pptx)
+
 
 [![Open the app in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://blank-app-frvx8sis2v.streamlit.app/)
 
