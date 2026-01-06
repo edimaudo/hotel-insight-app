@@ -15,21 +15,14 @@ import json
 import datetime
 from datetime import datetime
 import time
-import matplotlib
-import statistics
-import scipy
-from scipy.stats import linregress
-import sklearn
-from sklearn.linear_model import LinearRegression
+
 
 """
 App Information
 """
-APP_NAME = 'Toyota Gazoo Racing (GR) Analytics'
+APP_NAME = 'Boutique Hotel Analytics'
 ABOUT_HEADER = 'About'
-DRIVER_HEADER = 'Driver Performance Insights'
-PRE_RACE_HEADER = "Pre Event Prediction"
-POST_RACE_HEADER = 'Post Event Analytics'
+DASHBOARD_HEADER = 'Hotel Insights'
 APP_FILTERS = 'Filters'
 NO_DATA_INFO = 'No data available to display based on the filters'
 
