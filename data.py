@@ -41,12 +41,6 @@ bookings_df['end date'] = bookings_df['end date'].apply(correct_year)
 requests_df['start date'] = requests_df['start date'].apply(correct_year)
 requests_df['end date'] = requests_df['end date'].apply(correct_year)
 
-# filters
-month_list = ['January','February','March']
-room_type_list = ['conference_room_small','conference_room_large'
-'deluxe_room','double_room','normal_room']
-request_type_list = ['business','conference','holiday','party','vacation','wedding']
-
 # build unified booking dataset
 bookings_requests_df = pd.merge(bookings_df, requests_df, on='request id', how='left')
 bookings_requests_df['room_prefix'] = bookings_requests_df['room'].astype(str).str[0]
@@ -55,6 +49,15 @@ integrated_bookings_df = pd.merge(bookings_requests_df, rooms_df, left_on='room_
 integrated_bookings_df['stay_duration'] = (integrated_bookings_df['end date_x'] - integrated_bookings_df['start date_x']).dt.days
 # Booking month
 integrated_bookings_df['booking_month'] = integrated_bookings_df['start date_x'].dt.month_name()
+# Total guest
+integrated_bookings_df['total_guests'] = integrated_bookings_df['#adults'] + integrated_bookings_df['#children']
+# Booking revenue
+integrated_bookings_df['booking_revenue'] = integrated_bookings_df['stay_duration'] * integrated_bookings_df['price/day']
+
+# filters
+month_list = integrated_bookings_df['booking_month'].unique().tolist()
+room_type_list = integrated_bookings_df['room type'].unique().tolist()
+request_type_list = integrated_bookings_df['request type'].unique().tolist()
 
 # Integrated food order
 integrated_food_orders_df = pd.merge(food_orders_df, menu_df, left_on='menu id', right_on='id', how='left')
